@@ -47,10 +47,10 @@ const divs = document.querySelectorAll(".square");
 
 //change color
 
-for (let i = 0; i < divs.length; i++) {
+for (const div of divs) {
 
-  divs[i].addEventListener("click", function() {
-  divs[i].style.backgroundColor = input.value
+  div.addEventListener("click", function() {
+  div.style.backgroundColor = input.value
 
   });
 }
