@@ -7,7 +7,7 @@
  * You can mostly leave this section alone!
  * But if you want to change how wide the canvas is,
  * there are just two steps:
- * 
+ *
  * 1. Change the `gridWidth` value below.
  * 2. Change the `grid-template-rows` and
  * `grid-template-columns` to match.
@@ -20,10 +20,13 @@ let count = 0;
 while (count <= gridWidth * gridWidth) {
   const canvas = document.querySelector('.canvas');
   const div = document.createElement('div');
-  div.className = 'square color-5';
+  div.className = 'square';
   canvas.appendChild(div);
   count++;
 }
+
+
+
 
 
 /***********
@@ -33,11 +36,25 @@ while (count <= gridWidth * gridWidth) {
 // Add queries for all your squares, palette colors, and brush here.
 // (Note the singular or plural used in that sentence!)
 
+const input = document.querySelector("input")
+const divs = document.querySelectorAll(".square");
+
 
 
 /****************************
  * EVENT LISTENER FUNCTIONS *
 ****************************/
+
+//change color
+
+for (let i = 0; i < divs.length; i++) {
+
+  divs[i].addEventListener("click", function() {
+  divs[i].style.backgroundColor = input.value
+
+  });
+}
+
 
 // Now add some functions to handle clicking one particular square
 // and clicking one particular palette color. You can leave them
